@@ -19,6 +19,7 @@ namespace WindowsFormsApp6
 
         private void main_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.tbl_users' table. You can move, or remove it, as needed.
             label1.Text = frmLogin.loggeduser.ToString();
         }
 
@@ -32,5 +33,18 @@ namespace WindowsFormsApp6
         {
 
         }
+
+        private void btnAim_Click(object sender, EventArgs e)
+        {
+            new frmAim().Show();
+            this.Hide();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            new frmLogin().Show();
+            this.Hide();
+        }
+
     }
 }

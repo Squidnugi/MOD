@@ -18,7 +18,7 @@ namespace WindowsFormsApp6
             InitializeComponent();
 
         }
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\HENRYMCCONVILLE\\source\\repos\\WindowsFormsApp6\\db_mod.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\henry\\Source\\Repos\\Squidnugi\\WindowsFormsApp6\\db_mod.mdf;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
@@ -32,19 +32,52 @@ namespace WindowsFormsApp6
             {
                 string user = txtUsername.Text;
                 string pass = txtPassword.Text;
-                string register = "INSERT INTO tbl_users (username, password) VALUES (@val1, @val2)";
-                cmd = new SqlCommand(register, con);
-                cmd.Parameters.AddWithValue("@val1", user);
-                cmd.Parameters.AddWithValue("@val2", pass);
                 con.Open();
-                cmd.ExecuteNonQuery();
+                string check = "SELECT * FROM tbl_users WHERE username = '"+user+"'";
+                cmd = new SqlCommand(check, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                bool match = false;
+                if(dr.Read() == true)
+                {
+                    match = true;
+                }
                 con.Close();
+                if (match)
+                {
+                    MessageBox.Show("Username exists, please use a different one", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPassword.Text = "";
+                    txtComPassword.Text = "";
+                    txtPassword.Focus();
+                }
+                else
+                {
+                    if (user.Contains("@mod.co.uk"))
+                    {
+                        string register = "INSERT INTO tbl_users (username, password) VALUES (@val1, @val2)";
+                        cmd = new SqlCommand(register, con);
+                        cmd.Parameters.AddWithValue("@val1", user);
+                        cmd.Parameters.AddWithValue("@val2", pass);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
 
-                txtUsername.Text = "";
-                txtPassword.Text = "";
-                txtComPassword.Text = "";
 
-                MessageBox.Show("Your Account has been Successfully Created", "Registration Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtUsername.Text = "";
+                        txtPassword.Text = "";
+                        txtComPassword.Text = "";
+
+                        MessageBox.Show("Your Account has been Successfully Created", "Registration Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("username does does not contain the correct email domain, Please Re-enter", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtPassword.Text = "";
+                        txtComPassword.Text = "";
+                        txtPassword.Focus();
+                    }
+                }
+                
+
             }
             else
             {
@@ -80,12 +113,6 @@ namespace WindowsFormsApp6
         private void label6_Click(object sender, EventArgs e)
         {
             new frmLogin().Show();
-            this.Hide();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-            new main().Show();
             this.Hide();
         }
     }
