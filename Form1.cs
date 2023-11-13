@@ -18,7 +18,7 @@ namespace WindowsFormsApp6
             InitializeComponent();
 
         }
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\henry\\Source\\Repos\\Squidnugi\\WindowsFormsApp6\\db_mod.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
