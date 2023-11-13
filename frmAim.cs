@@ -23,7 +23,6 @@ namespace WindowsFormsApp6
         Random random = new Random();
         Stopwatch stopwatch = new Stopwatch();
         List<int> lst_secs = new List<int>() { };
-        //int[] lst_secs = { };
         int xmin = 12;
         int ymin = 66;
         int count = 10;
@@ -57,9 +56,13 @@ namespace WindowsFormsApp6
                 {
                     while (dr.Read())
                     {
-                        if ((int)dr[4] < average)
+                        if (!dr.IsDBNull(4))
                         {
-                            higher = false;
+                            int stscor = dr.GetInt32(4);
+                            if (stscor < average)
+                            {
+                                higher = false;
+                            }
                         }
                     }
                 }
