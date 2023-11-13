@@ -8,6 +8,7 @@ Then you create a server-based database.
 
 after the database is created in Server Explorer and right click tables and Click Add New Table
 ![image](https://github.com/Squidnugi/MOD/assets/77162027/8f081a0c-061b-40fb-b8c1-a0de5b34f77f)
+
 copy and paste this into the query:
 
 CREATE TABLE [dbo].[tbl_users]
