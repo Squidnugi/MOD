@@ -48,7 +48,10 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(120)))), ((int)(((byte)(78)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(86)))), ((int)(((byte)(69)))));
             this.button1.Location = new System.Drawing.Point(66, 73);
             this.button1.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.button1.Name = "button1";
@@ -61,17 +64,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(275, 73);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
+            this.label1.Location = new System.Drawing.Point(401, 73);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 38);
+            this.label1.Size = new System.Drawing.Size(150, 38);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "user email";
             // 
             // btnAim
             // 
-            this.btnAim.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(161)))), ((int)(((byte)(113)))));
+            this.btnAim.FlatAppearance.BorderSize = 0;
+            this.btnAim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(86)))), ((int)(((byte)(69)))));
             this.btnAim.Location = new System.Drawing.Point(66, 170);
             this.btnAim.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.btnAim.Name = "btnAim";
@@ -83,7 +90,10 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
             this.btnLogOut.Location = new System.Drawing.Point(66, 276);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.btnLogOut.Name = "btnLogOut";
@@ -93,37 +103,13 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // database1DataSet
-            // 
-            // 
-            // tblusersBindingSource
-            // 
-
-            // 
-            // tbl_usersTableAdapter
-            // 
-            // 
-            // tblusersBindingSource1
-            // 
-
-            // 
-            // tblusersBindingSource2
-            // 
-
-            // 
-            // tblusersBindingSource3
-            // 
-
-            // 
-            // tblusersBindingSource4
-            // 
-
-            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.camo_green_ras006_5;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(720, 477);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogOut);

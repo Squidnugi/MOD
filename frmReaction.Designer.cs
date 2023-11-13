@@ -39,14 +39,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(161)))), ((int)(((byte)(113)))));
             this.label1.Location = new System.Drawing.Point(117, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Wait";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnReact
             // 
@@ -63,10 +64,11 @@
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(120)))), ((int)(((byte)(78)))));
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(86)))), ((int)(((byte)(69)))));
             this.btnHome.Location = new System.Drawing.Point(97, 476);
             this.btnHome.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnHome.Name = "btnHome";
@@ -79,6 +81,8 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
             this.lblTime.Location = new System.Drawing.Point(134, 410);
             this.lblTime.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTime.Name = "lblTime";
@@ -88,19 +92,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(86)))), ((int)(((byte)(69)))));
             this.label2.Location = new System.Drawing.Point(34, 47);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(221, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Current High Score:";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmReaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::WindowsFormsApp6.Properties.Resources.camo_green_ras006_5;
             this.ClientSize = new System.Drawing.Size(364, 633);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.btnHome);

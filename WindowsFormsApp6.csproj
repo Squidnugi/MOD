@@ -149,15 +149,17 @@
     <None Include="Resources\27020360 %281%29.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="db_mod.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="db_mod_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>db_mod.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\camo-green-ras006_5.jpg" />
     <None Include="Resources\target-icon-4529.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

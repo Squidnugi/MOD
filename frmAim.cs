@@ -17,9 +17,11 @@ namespace WindowsFormsApp6
 {
     public partial class frmAim : Form
     {
-        SqlConnection con = new SqlConnection("Data Source");
+        //sql connections
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\henry\\Source\\Repos\\Squidnugi\\MOD\\Database1.mdf;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
+        //class wide values
         Random random = new Random();
         Stopwatch stopwatch = new Stopwatch();
         List<int> lst_secs = new List<int>() { };
@@ -28,7 +30,6 @@ namespace WindowsFormsApp6
         int count = 10;
         int xdif = 155;
         int ydif = 146;
-        int pstscore = 0;
         bool done = false;
         string user = frmLogin.loggeduser.ToString();
         public frmAim()
@@ -38,15 +39,19 @@ namespace WindowsFormsApp6
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            //checks if count is zero and if this section has already been ran before
             if (count <= 0 && done == false)
             {
                 
                 stopwatch.Stop();
                 label1.Text = "Count: " + count;
+                //adds stopwatch time to list
                 lst_secs.Add((int)stopwatch.ElapsedMilliseconds);
+                //get's the avrage number from the number within the list
                 int average = (int)lst_secs.Average();
                 label1.Text = "Score: "+average.ToString();
                 done = true;
+                //get's information from database
                 bool higher = true;
                 string queryString = "SELECT * FROM tbl_users WHERE username = @user";
                 cmd = new SqlCommand(queryString, con);
@@ -58,6 +63,7 @@ namespace WindowsFormsApp6
                     {
                         if (!dr.IsDBNull(4))
                         {
+                            //checks if the new score is better than current high score
                             int stscor = dr.GetInt32(4);
                             if (stscor < average)
                             {
@@ -67,6 +73,7 @@ namespace WindowsFormsApp6
                     }
                 }
                 con.Close();
+                //uptates if new score is better that high score
                 if (higher)
                 {
                     string score = "UPDATE tbl_users SET AimScore=@time WHERE username = @user";
@@ -79,6 +86,7 @@ namespace WindowsFormsApp6
                 }
 
             }
+            //adds timer to the list of times, updates count, and changes target to a random location
             else if (done == false)
             {
                 stopwatch.Stop();
@@ -94,9 +102,10 @@ namespace WindowsFormsApp6
                 stopwatch.Start();
             }
         }
-
+        //activates when page opens
         private void frmAim_Load(object sender, EventArgs e)
         {
+            //get's information from database
             string queryString = "SELECT * FROM tbl_users WHERE username = @user";
             cmd = new SqlCommand(queryString, con);
             cmd.Parameters.AddWithValue("@user", user);
@@ -110,18 +119,19 @@ namespace WindowsFormsApp6
             }
 
             con.Close();
-
+            //set's random location to be inside of the form
             int width = this.ClientSize.Width;
             int height = this.ClientSize.Height;
-            
+            //creates random location
             int randx = random.Next(xmin, width - xdif);
             int randy = random.Next(ymin, height - ydif);
+            //set's target to random location, starts the count, and starts the stopwatch
             Target.Location = new Point(randx, randy);
             label1.Text = "Count: " + count;
             count--;
             stopwatch.Start();
         }
-
+        //takes user to menu if home button is clicked
         private void btnHome_Click(object sender, EventArgs e)
         {
             new main().Show();
