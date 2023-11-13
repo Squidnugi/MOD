@@ -7,7 +7,9 @@ Then you create a server-based database
 ![image](https://github.com/Squidnugi/WindowsFormsApp6/assets/77162027/2a8a06a7-17ac-4004-b693-099c9e8fef9f)
 after the database is created in Server Explorer add a new table
 ![image](https://github.com/Squidnugi/WindowsFormsApp6/assets/77162027/5a6a3a8f-0bac-4bce-9c7a-84bba82f0eb6)
-copy and paste this into the query: CREATE TABLE [dbo].[tbl_users]
+copy and paste this into the query:
+
+CREATE TABLE [dbo].[tbl_users]
 (
 	[Id] INT NOT NULL IDENTITY, 
     [username] NCHAR(50) NULL, 
@@ -16,6 +18,7 @@ copy and paste this into the query: CREATE TABLE [dbo].[tbl_users]
     [AimScore] INT NULL, 
     CONSTRAINT [PK_tbl_users] PRIMARY KEY ([Id])
 )
+
 and press update
 ![image](https://github.com/Squidnugi/WindowsFormsApp6/assets/77162027/749cf253-1d96-494b-9470-266880896b41)
 after the table have been updated go to the database's properties and copy the path
