@@ -9,3 +9,4 @@
 ![image](https://github.com/Squidnugi/WindowsFormsApp6/assets/77162027/595786f5-2eb9-44c3-bf5a-d05d117d2fdd)
 ![image](https://github.com/Squidnugi/WindowsFormsApp6/assets/77162027/7cf984ff-fecc-44a6-920c-d77e3322887b)
 ![image](https://github.com/Squidnugi/WindowsFormsApp6/assets/77162027/332de59d-12c8-4ad8-b717-d84bf2f07426)
+![image](https://github.com/Squidnugi/WindowsFormsApp6/assets/77162027/749cf253-1d96-494b-9470-266880896b41)
