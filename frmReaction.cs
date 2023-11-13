@@ -27,7 +27,7 @@ namespace WindowsFormsApp6
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\henry\\Source\\Repos\\Squidnugi\\WindowsFormsApp6\\db_mod.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
         private void frmTimer_Load(object sender, EventArgs e)
@@ -79,6 +79,7 @@ namespace WindowsFormsApp6
             {
                 stopwatch.Stop();
                 string time = stopwatch.ElapsedMilliseconds.ToString();
+                int numtime = Convert.ToInt32(time);
                 label1.Text = "Well done";
                 lblTime.Text = time;
                 pressed = true;
@@ -91,9 +92,13 @@ namespace WindowsFormsApp6
                 {
                     while (dr.Read())
                     {
-                        if ((int)dr[3] < Int32.Parse(time))
+                        if (!dr.IsDBNull(3))
                         {
-                            higher = false;
+                            int stscor = dr.GetInt32(3);
+                            if (stscor < numtime)
+                            {
+                                higher = false;
+                            }
                         }
                     }
                 }
